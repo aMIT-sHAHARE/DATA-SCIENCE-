@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+html{
+scroll-behavior:smooth;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff4e78,#ff9a9e);
+font-family: 'Great Vibes', cursive;
+min-height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+/*.container{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,.2);
+max-width:400px;
+animation:fade 2s ease;
+}*/
+
+.container{
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(15px);
+padding:45px;
+border-radius:30px;
+text-align:center;
+box-shadow:
+0 0 30px rgba(255,0,60,.4),
+inset 0 0 20px rgba(255,255,255,.3);
+max-width:420px;
+max-height:90vh;
+overflow-y:auto;
+animation:fade 2s ease;
+scrollbar-width:none;       
+-ms-overflow-style:none;   
+}
+
+.container::-webkit-scrollbar{
+display:none;              
+}
+
+/*h1{
+color:white;
+font-size:32px;
+margin-bottom:10px;
+}*/
+
+h1{
+font-family:'Great Vibes', cursive;
+color:white;
+font-size:42px;
+margin-bottom:10px;
+letter-spacing:2px;
+text-shadow:0 0 15px rgba(255,255,255,.6);
+}
+
+p{
+font-family:'Playfair Display', serif;
+color:white;
+font-size:18px;
+margin-bottom:20px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff003c;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+font-family:'Playfair Display', serif;
+transform:scale(1.1);
+background:#ff1a52;
+}
+
+.rose{
+font-size:70px;
+animation:float 3s infinite ease-in-out;
+}
+
+.message{
+font-family:'Dancing Script', cursive;
+font-size:22px;
+line-height:1.5;
+display:none;
+color:white;
+margin-top:20px;
+font-size:18px;
+animation:fade 1.5s ease;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+from{opacity:0; transform:scale(.8);}
+to{opacity:1; transform:scale(1);}
+}
+
+.heart{
+position:absolute;
+color:#ff003c;
+font-size:20px;
+animation:rise 4s linear infinite;
+}
+
+@keyframes rise{
+0%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+100%{
+opacity:0;
+transform:translateY(-600px) scale(2);
+}
+}
+@media(max-width:600px){
+
+.container{
+padding:30px 20px;
+}
+
+h1{
+font-size:34px;
+}
+
+.message{
+font-size:22px;
+}
+
+button{
+font-size:15px;
+padding:10px 22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="rose">🌹</div>
+<h1>Happy Rose Day</h1>
+<p>For My GFT 💕</p>
+
+<button onclick="showLove()" id="loveBtn">Click For Love</button>
+
+<audio id="bgMusic">
+<source src="love.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="message" id="msg">
+🌹 Happy Rose Day 🌹<br><br>
+
+Honestly… I don’t know you properly yet,<br>
+but I can’t lie — you’re really beautiful 😌<br><br>
+
+Your smile is sooo cute yaar 😊  
+aur jab aap smile karti ho na,<br>
+to kuch kuch ho jata hai ✨<br><br>
+
+Your look, your vibe, even the way you carry yourself —<br>
+sab kuch perfect lagta hai ❤️  
+Seriously, heaven se aayi ho kya? 🌤️<br><br>
+
+Maybe I’m being bold…  
+but I’d genuinely like to know you better 🙂<br><br>
+
+— from if_and_else( aMIT ⚡ ) 💐
+</div>
+
+</div>
+
+<script>
+function showLove(){
+document.getElementById("msg").style.display="block";
+for(let i=0;i<40;i++){
+createHeart();
+}
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},4000);
+}
+setInterval(()=>{
+createHeart();
+},600);
+
+let music=document.getElementById("bgMusic");
+let btn=document.getElementById("loveBtn");
+let played=false;
+
+function showLove(){
+
+document.getElementById("msg").style.display="block";
+
+if(!played){
+music.play();
+btn.innerHTML="⏸ Music Off ❤️";
+played=true;
+}else{
+if(music.paused){
+music.play();
+btn.innerHTML="⏸ Music Off ❤️";
+}else{
+music.pause();
+btn.innerHTML="▶ Play Music ❤️";
+}
+}
+
+for(let i=0;i<25;i++){
+createHeart();
+}
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},4000);
+}
+
+
+</script>
+
+</body>
+</html>
