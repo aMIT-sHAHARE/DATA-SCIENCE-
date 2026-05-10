@@ -35,18 +35,9 @@ DATASCIENCE_JUPYTER
 │   └── Data visualization examples
 │
 ├── project
-│   ├── airbnb
-│   │   └── Airbnb dataset analysis project
 │   │
 │   └── netflix
 │       └── Netflix dataset analysis project
-│
-├── python
-│   └── normal_python
-│       └── Core Python programs
-│
-├── ss.py
-│   └── Python practice script
 │
 ├── titanic_clean.csv
 │   └── Cleaned Titanic dataset used for analysis
@@ -57,12 +48,6 @@ DATASCIENCE_JUPYTER
 ---
 
 # 📊 Projects Included
-
-### 🏠 Airbnb Data Analysis
-
-* Data exploration
-* Cleaning and preprocessing
-* Visualization
 
 ### 🎬 Netflix Data Analysis
 
